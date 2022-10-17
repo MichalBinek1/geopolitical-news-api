@@ -17,11 +17,6 @@ exports.ukrHTML = (req, res, next) => {
                 $('a:contains("Ukraine")', html).each(function () {
                     var title = $(this).text().replaceAll('/n', '').trim()
                     var url = $(this).attr('href')
-                    
-                      
-                    
-                    
-                    
 
                     articles.push({
                         title: title,
@@ -29,45 +24,11 @@ exports.ukrHTML = (req, res, next) => {
                         source: newspaper.name,
                         date: date
                     })
-                    // t=t+1
-                    // console.log(articles)
-                    // if(t>1){
-                    //     if(articles[index].url == articles[index+1].url)
-                    //         {
-                                
-                    //             articles.splice(index,1)
 
-                                
-                                
-                    //         }
-                        
-                    //     else{
-                    //         index = index + 1
-                    //         // dodac warunek dla t=1 && articles[0] == articles[1] => article.save()
-                    //         article
-                    //         .save()
-                    //     }
-                    // }
-                    
-                    
-                    // console.log(index)
-                    // console.log(articles)
-                    
-                   // console.log(articles)
-                   
-                //console.log(articles)
                 })
-                //console.log(articles)
-                
+
             }).then(()=>{
-                
-                // console.log(t)
-                // const article = new Article({
-                //     title: title,
-                //     url: url,
-                //     date: date
-                // })  
-                
+              
                 for(let i = 0; i<articles.length - 1; i++){
                     if(i==articles.length){
                         break
